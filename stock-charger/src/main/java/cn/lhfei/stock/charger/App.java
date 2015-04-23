@@ -1,4 +1,4 @@
-package cn.lhfei.thinker;
+package cn.lhfei.stock.charger;
 
 /**
  * Hello world!
