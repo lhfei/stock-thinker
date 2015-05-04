@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.lhfei.stock.reporting.orm.mapper.IStockMapper">
+	
+	
+	<insert id="createStockLog" parameterType="list" useGeneratedKeys="false">
+		INSERT INTO STOCK_THINKER (STOCK_CODE, STOCK_DATE , STOCK_WEEK, OPENING_PRICE, 
+			MAX_PRICE, MIN_PRICE, CLOSING_PRICE, TURN_OVER, TOTAL_VOLUME )
+		
+		VALUE 
+		
+		<foreach collection="list" item="model" separator=","> 
+	        (           
+	            #{model.code}, #{model.date}, #{model.week}, #{model.openingPrice}, 
+	            #{model.maxPrice}, #{model.minPrice}, #{model.closingPrice}, 
+	            #{model.turnover}, #{model.totalVolume}    
+	        )
+	    </foreach>
+		
+	</insert>
+	
+	
+</mapper>
